@@ -1,4 +1,4 @@
-#MKVmetaclean
+# MKVmetaclean
 
 cleans metadata from MKV files. Also prints when files have multiple audio or video language files
 Only cleans first audio and first video file track titles
@@ -7,11 +7,11 @@ removes all attachments
 
 After cloning the repository, perform the following, if needed
 
-cd mediainfoclean/
+*cd mediainfoclean/
+*chmod a+x mediainfoclean.sh
 
-chmod a+x mediainfoclean.sh
+**Account running should have permission to edit all the MKV files touched
 
-Account running should have permission to edit all the MKV files touched
 
 This script search MKV files for rogue metadata, like video/audio track file titles,
 tags such as XML tags, attachments (images, fonts, random files)
@@ -19,7 +19,7 @@ tags such as XML tags, attachments (images, fonts, random files)
 It will also identify when more than 1 audio or video (rare) track are found
 You can list the results, which will output in CSV format
 
-Usage:
+**Usage:
 ./mediainfoclean.sh  -p=\"/path/to/dir/\" [--clean]
 
 Arguments:
