@@ -23,6 +23,7 @@ You can list the results, which will output in CSV format
 ./mediainfoclean.sh  -p=\"/path/to/dir/\" [--clean]
 
 **Arguments:**
+
 -p path  to directory. without a value, will use current directory
  
 --clean  optional. Script will go through and clean the following fields:
@@ -34,5 +35,5 @@ Results will be posted after commands complete
 Files with only A/V extra tracks will not be cleaned
 These are fields where I found misc data tucked in there by various authors. This could change.
     
-.mediainfoclean.ini  is created in \$HOME of the account running the script
+**.mediainfoclean.ini  is created in \$HOME of the account running the script**
 
