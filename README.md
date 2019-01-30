@@ -8,6 +8,7 @@ removes all attachments
 After cloning the repository, perform the following, if needed
 
 *cd mediainfoclean/*
+
 *chmod a+x mediainfoclean.sh*
 
 **Account running should have permission to edit all the MKV files touched**
@@ -20,6 +21,7 @@ It will also identify when more than 1 audio or video (rare) track are found
 You can list the results, which will output in CSV format
 
 **Usage:**
+
 ./mediainfoclean.sh  -p=\"/path/to/dir/\" [--clean]
 
 **Arguments:**
