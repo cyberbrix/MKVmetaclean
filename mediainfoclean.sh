@@ -111,6 +111,12 @@ echo "\"CompleteName\",\"Title\",\"Description\",\"Attachments\",\"VidTitle\",\"
 while IFS=':' read -r CompleteName Title Description Attachments VidCount AudCount VidTitle AudTitle
 do 
 
+  # skip files that are not impacted - single a/v and no metatadata
+  if [ ",\"$Title\",\"$Description\",\"$Attachments\",\"$VidTitle\",\"$AudTitle\",\"$VidCount\",\"$AudCount\"" = ",\"\",\"\",\"\",\"\",\"\",\"1\",\"1\"" ]
+  then
+  continue
+  fi
+
   # check if only A/V track count is impacted or metadata also exists
   AVONLY=0
   if [ ",\"$Title\",\"$Description\",\"$Attachments\",\"$VidTitle\",\"$AudTitle\"," = ",\"\",\"\",\"\",\"\",\"\"," ]
@@ -138,7 +144,11 @@ do
     mkvpropedit -r "$tmpfile2" "$CompleteName" $removeattachments --tags all: -d title -d date -d segment-uid -d segment-filename -d prev-filename -d next-filename -d prev-uid -d next-uid --edit track:v1 --delete name --edit track:a1 --delete name 
    cat "$tmpfile2" >> "$tmpfile1"
   fi
-done< <( find "$DIR" -type f -iname "*.mkv" -exec mediainfo --Inform=file://$configfile "$1"  {} \; | grep -v '::::1:1::'| sort -u)
+
+# Old way of detecting.
+#done< <( find "$DIR" -type f -iname "*.mkv" -exec mediainfo --Inform=file://$configfile "$1"  {} \; | grep -v '::::1:1::'| sort -u)
+done< <( find "$DIR" -type f -iname "*.mkv" -exec mediainfo --Inform=file://$configfile "$1"  {} \;)
+
 
 if [ "$ACTION" = "CLEAN" ]
 then
