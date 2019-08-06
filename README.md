@@ -31,11 +31,19 @@ You can list the results, which will output in CSV format
 --clean  optional. Script will go through and clean the following fields:
  Tags, attachments, general title, date,segment info, previous/next filenames, uids,
 track names for the first audio and video file
+
+**Examples:**
+
+./mediainfoclean.sh -p=/media/drive1/ --clean
+./mediainfoclean.sh -p="/media/drive1/Show Name/"
+
+
 See https://matroska.org/technical/specs/index.html for info
 Results will be posted after commands complete
 
 Files with only A/V extra tracks will not be cleaned
+
 These are fields where I found misc data tucked in there by various authors. This could change.
     
-**.mediainfoclean.ini  is created in \$HOME of the account running the script**
+**.mediainfoclean.ini is created in \$HOME of the account running the script**
 
