@@ -35,6 +35,7 @@ track names for the first audio and video file
 **Examples:**
 
 ./mediainfoclean.sh -p=/media/drive1/ --clean
+
 ./mediainfoclean.sh -p="/media/drive1/Show Name/"
 
 
