@@ -1,4 +1,4 @@
-# MKVmetaclean
+# mkvinfoclean
 
 cleans metadata from MKV files. Also prints when files have multiple audio or video language files
 Only cleans first audio and first video file track titles
@@ -9,7 +9,7 @@ After cloning the repository, perform the following, if needed
 
 *cd mediainfoclean/*
 
-*chmod a+x mediainfoclean.sh*
+*chmod a+x mkvinfoclean.sh*
 
 **Account running should have permission to edit all the MKV files touched**
 
@@ -22,7 +22,7 @@ You can list the results, which will output in CSV format
 
 **Usage:**
 
-./mediainfoclean.sh  -p=\"/path/to/dir/\" [--clean]
+./mkvinfoclean.sh  -p=\"/path/to/dir/\" [--clean]
 
 **Arguments:**
 
@@ -34,9 +34,9 @@ track names for the first audio and video file
 
 **Examples:**
 
-./mediainfoclean.sh -p=/media/drive1/ --clean
+./mkvinfoclean.sh -p=/media/drive1/ --clean
 
-./mediainfoclean.sh -p="/media/drive1/Show Name/"
+./mkvinfoclean.sh -p="/media/drive1/Show Name/"
 
 
 See https://matroska.org/technical/specs/index.html for info
@@ -46,5 +46,5 @@ Files with only A/V extra tracks will not be cleaned
 
 These are fields where I found misc data tucked in there by various authors. This could change.
     
-**.mediainfoclean.ini is created in \$HOME of the account running the script**
+**.mkvinfoclean.ini is created in \$HOME of the account running the script**
 
